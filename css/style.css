@@ -40,4 +40,99 @@
   }
 
   /* ----- My CSS ----- */
+
+body{
+  background: black;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* h1 Stripe */
+  .stripe {
+    position: relative; /* Anchors the positioning of the ::after element */
+}
+
+.stripe::after {
+    position: absolute; /* Allows us to manipulate the position of the ::after element */
+    content: ""; /* Without this property the ::after element will not exist!! */
+    width: 100%; /* Sets the width to be the same size as the span */
+    height: 1rem;  /* Sets the height to be more than 0, so we ca nsee the element */
+    right: 0; /* Aligns the right edge of the ::after to the right edge of the span */
+    bottom: 10px; /* Aligns the bottom edge of the ::after to be 10 pixels above the bottom of the span */
+    background:  skyblue;
+
+    z-index: -1; /* Puts the stripe behind the text */
+}
+
+/* Hero image */
+.wrapper {
+  border-radius: 1rem;    
+  overflow: hidden; /* Clips the image if it goes outside the bounds of .wrapper. */
+  position: relative; /* Refererence element for absolutely positioned text */
+}
+
+.wrapper img{
+  width: 100%; /* constrains the image size to the size of the wrapper*/
+  animation: zoom 8s infinite ease-in-out alternate; /* Applies the animation */
   
+  /* because img is display inline by default, we run into strange issues where the contents of the wrapper is slightly larger than the image itself, meaning that when the image is at its smallest, it clips at the bottom of the container. Setting it to display block fixes this */
+  display: block;
+}
+@keyframes zoom {
+  from {
+      transform: scale(1);
+  }
+  to {
+      transform: scale(1.5); /* Makes the image larger; will be cropped by overflow: hidden on .wrapper */
+  }
+}
+
+.wrapper h2, 
+.wrapper p {
+  position: absolute;
+  z-index: 5;
+  color: white;
+  margin: 0;
+}
+
+/* THE SYSTEM MAGAZINE (First <p>) */
+.wrapper p:nth-of-type(1) {
+  bottom: 6rem;
+  left: 2rem;
+}
+
+/* Second paragraph (Take a tour...) */
+.wrapper p:nth-of-type(2) {
+  bottom: 2rem;
+  left: 2rem;
+}
+
+/* Welcome text */
+.wrapper h2 {
+  bottom: 4rem;
+  left: 2rem;
+}
+
+.welcome> h2 {
+  margin: 0; /* Removes the default margin-bottom on the h2. Without this, the text will be more than 30px away from the bottom. So we're getting rid of that so that it is as far away from the bottom as it is from the side */
+}
+
+/* Colour Shifting text */
+.colorShift {
+  background: linear-gradient(90deg, blue, rgb(0, 255, 255)); /* Applies the gradiant to the background */
+  background-size: 200% 100%; /* sets the gradient to be twice as wide as the element - half will be off-screen so to speak */
+  background-position: 0% 0%; /* Specifies the starting position of the background */
+  -webkit-text-fill-color: transparent; /* Makes the text transparent */
+  -webkit-background-clip: text; /* Uses the text as a mask for the background - it cuts off any background that's not behind the text */
+  
+  animation: textScroll 3s infinite alternate; /* Applies the animation */
+}
+
+@keyframes textScroll {
+  from {
+      background-position: 0% 0%; /* Starting position for background */
+  }
+  to {
+      background-position: 100% 0%; /* ending position: background will scroll from one side to the other. */
+  }
+}
