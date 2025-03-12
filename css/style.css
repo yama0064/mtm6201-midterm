@@ -69,6 +69,9 @@ body{
   border-radius: 1rem;    
   overflow: hidden; /* Clips the image if it goes outside the bounds of .wrapper. */
   position: relative; /* Refererence element for absolutely positioned text */
+
+    /* Glow effect */
+    box-shadow: 0 0 3rem rgba(255, 255, 255, 0.2); /* White soft glow */
 }
 
 .wrapper img{
@@ -137,4 +140,50 @@ body{
   to {
       background-position: 100% 0%; /* ending position: background will scroll from one side to the other. */
   }
+}
+
+/* Header */
+header {
+  display: flex;
+  justify-content: space-between; /* Pushes h1 to the left and nav to the right */
+  align-items: center; /* Aligns items vertically */
+  padding: 1rem; /* Adds some space inside */
+}
+
+nav ul {
+  display: flex;
+  gap: 2rem; /* Adds space between navigation items */
+  list-style: none; /* Removes bullet points */
+  padding: 0;
+  margin: 0;
+}
+
+/* Planets */
+.planets {
+  display: flex;
+  gap: 2rem; /* Adds space between each planet */
+  flex-wrap: nowrap; /* Prevents items from wrapping */
+  justify-content: center; /* Centers the planets within the container */
+}
+
+.planets div {
+  display: flex;
+  flex-direction: column; /* Stack h2 and p vertically */
+  align-items: center; /* Center horizontally */
+  text-align: center; /* Ensures text alignment */
+  gap: 1rem;
+}
+
+/* Footer */
+
+footer {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+/*  */
+.container {
+  max-width: 900px; /* Limits the width */
+  margin: 0 auto; /* Centers content */
+  padding: 0 2rem; /* Adds space on small screens */
 }
