@@ -118,6 +118,15 @@ body{
   left: 2rem;
 }
 
+@media (max-width:400px) {
+  .wrapper {
+  display: flex;
+  text-align: center;
+}
+
+
+}
+
 .welcome> h2 {
   margin: 0; /* Removes the default margin-bottom on the h2. Without this, the text will be more than 30px away from the bottom. So we're getting rid of that so that it is as far away from the bottom as it is from the side */
 }
@@ -163,6 +172,10 @@ nav ul {
     display: flex;
     flex-direction: column; 
     gap: 0.5rem;
+  }
+
+  header img {
+    
   }
 }
 
