@@ -4,16 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/reset.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
-    <title>Web Dev II midterm</title>
+    <title>The System</title>
 </head>
 <body>
     <div class="container">
-        <header>
+        <header role="banner">
             <h1>The <span class="stripe">SYSTEM</span></h1>
-            <nav>
+            <nav role="navigation">
                 <ul>
                     <li>Planets</li>
                     <li>Interstellar</li>
@@ -21,48 +22,50 @@
                 </ul>
             </nav>
         </header>
-        <main>
-            <section class="wrapper">
-                <img src="images/milky-way.jpg">
-                <p>THE SYSTEM MAGAZINE</p>
-                <h2 class="welcome">Welcome to the <span class="colorShift">Solar System</span></h2>
-                <p>Take a tour around the coolest stellar system around.</p>
+        <main role="main">
+            <section class="wrapper" aria-label="Introduction to the Solar System">
+                <img src="images/milky-way.jpg" alt="Milky Way">
+                <div class="texts">
+                    <p>THE SYSTEM MAGAZINE</p>
+                    <h2 class="welcome">Welcome to the <span class="colorShift">Solar System</span></h2>
+                    <p>Take a tour around the coolest stellar system around.</p>
+                </div>
             </section>
             <h2 class="meet">Meet the Locals</h2>
-            <article class="planets">
+            <section class="planets" aria-label="Planetary Information">
                 <div class="sun">
                     <img src="images/sun.jpg" alt="The Sun">
                     <h2>The Sun</h2>
-                    <p>Learn More</p>
+                    <a href="https://en.wikipedia.org/wiki/Sun" tabindex="0" aria-label="Learn more about the Sun on Wikipedia">Learn More</a>
                 </div>
                 <div class="mercury">
                     <img src="images/mercury.jpg" alt="Mercury">
                     <h2>Mercury</h2>
-                    <p>Learn More</p>
+                    <a href="https://en.wikipedia.org/wiki/Mercury_(planet)" tabindex="0" aria-label="Learn more about Mercury on Wikipedia">Learn More</a>
                 </div>
                 <div class="venus">
                     <img src="images/venus.jpg" alt="Venus">
                     <h2>Venus</h2>
-                    <p>Learn More</p>
+                    <a href="https://en.wikipedia.org/wiki/Venus" tabindex="0" aria-label="Learn more about Venus on Wikipedia">Learn More</a>
                 </div>
                 <div class="earth">
                     <img src="images/earth.jpg" alt="Earth">
                     <h2>Earth</h2>
-                    <p>Learn More</p>
+                    <a href="https://en.wikipedia.org/wiki/Earth" tabindex="0" aria-label="Learn more about Earth on Wikipedia">Learn More</a>
                 </div>
                 <div class="moon">
                     <img src="images/moon.jpg" alt="The Moon">
                     <h2>The Moon</h2>
-                    <p>Learn More</p>
+                    <a href="https://en.wikipedia.org/wiki/Moon" tabindex="0" aria-label="Learn more about the Moon on Wikipedia">Learn More</a>
                 </div>
                 <div class="mars">
                     <img src="images/mars.jpg" alt="Mercury">
                     <h2>Mars</h2>
-                    <p>Learn More</p>
+                    <a href="https://en.wikipedia.org/wiki/Mars" tabindex="0" aria-label="Learn more about Mars on Wikipedia">Learn More</a>
                 </div>
             </article>
         </main>
-        <footer><hr>&copy;2024-The System</footer>
+        <footer role="contentinfo" aria-label="Website Copyright Information"><hr>&copy;2024-The System</footer>
     </div>
 </body>
 </html>
